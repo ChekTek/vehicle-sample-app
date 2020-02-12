@@ -7,7 +7,7 @@
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-object>
-        <tr>
+        <tr (click)="onRowClicked(object.id)">
             <td *ngFor="let col of cols">
                 {{object[col.field]}}
             </td>

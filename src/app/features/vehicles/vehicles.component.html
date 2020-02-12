@@ -1,2 +1,2 @@
-<app-table *ngIf="vehicles" [data]="vehicles"></app-table>
+<app-table *ngIf="vehicles" [data]="vehicles" (rowClicked)="navigateToDetails($event)"></app-table>
 VEHICLES

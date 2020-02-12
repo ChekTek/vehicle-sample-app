@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-table',
@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TableComponent implements OnInit {
   @Input() data: object[];
   cols: Column[];
+  @Output() rowClicked: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() {
   }
@@ -16,6 +17,10 @@ export class TableComponent implements OnInit {
     if (!this.data || this.data.length === 0) { return; }
     const properties = this.getPrimitivePropertyList(this.data[0]);
     this.cols = this.getColumnsFromPropertyList(properties);
+  }
+
+  onRowClicked(id: number) {
+    this.rowClicked.emit(id);
   }
 
   getPrimitivePropertyList(object: object): string[] {
