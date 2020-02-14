@@ -11,7 +11,10 @@ import { Router } from '@angular/router';
 export class VehiclesComponent implements OnInit {
   vehicles: Vehicle[] = null;
   columnsToDisplay = ['id', 'make', 'model', 'year'];
-  constructor(private readonly vehicleService: VehiclesService, private readonly router: Router) { }
+
+  constructor(private readonly vehicleService: VehiclesService, private readonly router: Router) {
+  }
+
   async ngOnInit() {
     try {
       this.vehicles = await this.vehicleService.getAll();
@@ -22,6 +25,6 @@ export class VehiclesComponent implements OnInit {
   }
 
   navigateToDetails(id: number) {
-    console.log(`to route to details ${id}`);
+    this.router.navigate([`vehicles/${id}`]);
   }
 }

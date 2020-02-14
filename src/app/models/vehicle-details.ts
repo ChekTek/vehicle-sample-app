@@ -1,5 +1,6 @@
 export interface VehicleDetails {
-    horsepower: number;
-    zeroToSixy: number;
-    topSpeed: number;
+  vehicleId: number;
+  horsepower: number;
+  zeroToSixty: number;
+  topSpeed: number;
 }

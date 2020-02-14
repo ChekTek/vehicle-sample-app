@@ -3,30 +3,19 @@
 @import '../node_modules/primeng/resources/themes/nova-light/theme.css';
 @import '../node_modules/primeicons/primeicons.css';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-mat-table{
-    margin-right:10px;
-    margin-left:10px;
-    padding: 10px;
+html, body {
+  height: 100%;
 }
 
-.mat-footer-row,
-.mat-header-row,
-.mat-row {
-    display: flex;
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.mat-footer-row td,
-.mat-header-row td,
-.mat-row td{
-    flex: auto;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+.clickable {
+  cursor: pointer;
 }
-.mat-footer-row th,
-.mat-header-row th,
-.mat-row th{
-    flex: auto;
+
+a.nav {
+  margin: 10px;
 }

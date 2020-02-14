@@ -1,2 +1,10 @@
-<app-table *ngIf="vehicles" [data]="vehicles" (rowClicked)="navigateToDetails($event)"></app-table>
-VEHICLES
+<h2>Vehicles</h2>
+<hr>
+<app-table
+  *ngIf="vehicles"
+  [hasClickableRows]="true"
+  [data]="vehicles"
+  (rowClicked)="navigateToDetails($event)"
+>
+</app-table>
+<router-outlet></router-outlet>

@@ -7,8 +7,9 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class TableComponent implements OnInit {
   @Input() data: object[];
-  cols: Column[];
+  @Input() hasClickableRows = false;
   @Output() rowClicked: EventEmitter<number> = new EventEmitter<number>();
+  cols: Column[];
 
   constructor() {
   }
