@@ -7,44 +7,14 @@ import { VehicleDetails } from '../../models/vehicle-details';
 })
 export class VehiclesService {
   mockVehicles: Vehicle[] = [
-    {
-      id: 1,
-      make: 'Porsche',
-      model: '911 GT3 RS',
-      year: 2020
-    },
-    {
-      id: 2,
-      make: 'BMW',
-      model: 'M2',
-      year: 2020
-    },
-    {
-      id: 3,
-      make: 'Subaru',
-      model: 'WRX STI',
-      year: 2020
-    }
+    { id: 1, make: 'Porsche', model: '911 GT3 RS', year: 2020 },
+    { id: 2, make: 'BMW', model: 'M2', year: 2020 },
+    { id: 3, make: 'Subaru', model: 'WRX STI', year: 2020 }
   ];
   mockDetails: VehicleDetails[] = [
-    {
-      vehicleId: 1,
-      horsepower: 520,
-      zeroToSixty: 3.0,
-      topSpeed: 193
-    },
-    {
-      vehicleId: 2,
-      horsepower: 405,
-      zeroToSixty: 4.4,
-      topSpeed: 155
-    },
-    {
-      vehicleId: 3,
-      horsepower: 310,
-      zeroToSixty: 4.7,
-      topSpeed: 160
-    }
+    { vehicleId: 1, horsepower: 520, zeroToSixty: 3.0, topSpeed: 193 },
+    { vehicleId: 2, horsepower: 405, zeroToSixty: 4.4, topSpeed: 155 },
+    { vehicleId: 3, horsepower: 310, zeroToSixty: 4.7, topSpeed: 160 }
   ];
 
   constructor() {
