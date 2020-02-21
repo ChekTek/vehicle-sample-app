@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Vehicle } from '../../models/vehicle';
+import { VehiclesService } from '../vehicles/vehicles.service';
+import { Router } from '@angular/router';
+import { Part } from '../../models/part';
+import { PartsService } from './parts.service';
 
 @Component({
   selector: 'app-parts',
@@ -6,7 +11,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parts.component.scss']
 })
 export class PartsComponent implements OnInit {
-  constructor() {}
+  parts: Part[] = null;
 
-  ngOnInit() {}
+  constructor(private readonly partsService: PartsService, private readonly router: Router) {
+  }
+
+  async ngOnInit() {
+    try {
+      this.parts = await this.partsService.getAll();
+    } catch (error) {
+      console.error(error);
+      alert('Something went wrong!');
+    }
+  }
+
+  navigateToDetails(id: number) {
+    this.router.navigate([`parts/${id}`]);
+  }
 }

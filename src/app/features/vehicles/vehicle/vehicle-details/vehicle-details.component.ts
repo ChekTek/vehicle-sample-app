@@ -22,7 +22,6 @@ export class VehicleDetailsComponent implements OnInit {
       const { id } = params;
       this.vehicleDetails = await this.vehiclesService.getDetails(parseInt(id));
       this.data = [this.vehicleDetails];
-      console.log(this.data)
     });
   }
 

@@ -1,9 +1,26 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { PartsComponent } from './parts.component';
+import { PartComponent } from './part/part.component';
+import { PartDetailsComponent } from './part/part-details/part-details.component';
 
-const routes: Routes = [{ path: '', component: PartsComponent }];
+const routes: Routes = [{
+  path: '',
+  component: PartsComponent,
+  children: [
+    {
+      path: ':id',
+      component: PartComponent,
+      children: [
+        {
+          path: 'details',
+          component: PartDetailsComponent
+        }
+      ]
+    }
+  ]
+}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

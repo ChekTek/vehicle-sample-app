@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class VehiclesComponent implements OnInit {
   vehicles: Vehicle[] = null;
-  columnsToDisplay = ['id', 'make', 'model', 'year'];
 
   constructor(private readonly vehicleService: VehiclesService, private readonly router: Router) {
   }
