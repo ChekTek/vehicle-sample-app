@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './features/home/home.component';
 
 const routes: Routes = [
+  {
+    path: 'home',
+    component: HomeComponent
+  },
   {
     path: 'parts',
     loadChildren: () => import('./features/parts/parts.module').then(m => m.PartsModule)
@@ -9,6 +14,11 @@ const routes: Routes = [
   {
     path: 'vehicles',
     loadChildren: () => import('./features/vehicles/vehicles.module').then(m => m.VehiclesModule)
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   }
 ];
 
