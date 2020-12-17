@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GarageComponent implements OnInit {
 
-  private doorIsOpen: boolean = false;
+  doorIsOpen = false;
 
   constructor() { }
 
@@ -22,7 +22,7 @@ export class GarageComponent implements OnInit {
     this.doorIsOpen = false;
   }
 
-  get isOpen(){
+  get isOpen() {
     return this.doorIsOpen;
   }
 }
